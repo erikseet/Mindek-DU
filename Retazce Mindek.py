@@ -1,7 +1,7 @@
 
 def cislo():
     while True:
-        cislo = input("Zadaj počet súborov: ")
+        cislo = input("Zadaj počet slov: ")
         try:
             return int(cislo)
         except ValueError:
