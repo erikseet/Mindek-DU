@@ -1,4 +1,3 @@
-
 def cislo():
     while True:
         cislo = input("Zadaj počet slov: ")
@@ -19,5 +18,6 @@ for i in range(cislo):
     pocet += 1
     if pocet == len(input):
         pocet -= len(input)
-    with open(f"""slovo{pocet}""", mode="w", encoding="utf-8") as subor:
+    with open(f"""slovo{i}""", mode="w", encoding="utf-8") as subor:
         print(input[pocet - 1], file=subor)
+
