@@ -84,15 +84,15 @@ def draw_game():
 
     # A nakoniec vypiseme skore oboch hracov
 
-        draw_text(
-            text=str(score[1]),
-            x=WIDTH - 60, y=HEIGHT - 60, pozice_x='right'
-        )
+    draw_text(str(score[0]),
+            x=FONT_PADDING,
+            y=HEIGHT - FONT_PADDING - FONT_SIZE,
+            pozice_x='left')
+    draw_text(str(score[1]),
+            x=WIDTH - FONT_PADDING,
+            y=HEIGHT - FONT_PADDING - FONT_SIZE,
+            pozice_x='right')
 
-        draw_text(
-            text=str(score[0]),
-            x=60, y=HEIGHT - 60, pozice_x='left'
-        )
 
 
 def draw_text(text, x, y, pozice_x):
