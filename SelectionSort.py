@@ -18,5 +18,5 @@ for i in range(len(arr)):
 
 end = timer()
 print("Array ktory chceme zoradit: ", arr)
-print("Zoradenie pomocou BubbleSortu trvalo: ", end - cas, "sekúnd.")
-print("Zoradeny array BubbleSortu je: ",arr)
+print("Zoradenie pomocou SelectionSorteru trvalo: ", end - cas, "sekúnd.")
+print("Zoradeny array Selectionsorterom je: ",arr)
