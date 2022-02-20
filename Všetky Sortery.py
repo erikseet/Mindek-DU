@@ -5,14 +5,8 @@ arr = random.sample(range(5000), 5000)
 
 print("Array ktory chceme zoradit: ",arr)
 
-arr_bubble = arr
+
 arr_quicksort = arr
-arr_merge = arr
-arr_selection = arr
-arr_insertion = arr
-
-
-
 start_quicksort = timer()
 def partition(arr, low, high):
     i = (low - 1)
@@ -40,7 +34,7 @@ cas_quicksorter = end - start_quicksort
 
 
 
-
+arr_bubble = arr
 start_bubblesorter = timer()
 def bubbleSort(arr):
     n = len(arr)
@@ -54,7 +48,7 @@ end_bubblesorter = timer()
 cas_bubblesorter = end_bubblesorter - start_bubblesorter
 
 
-
+arr_insertion = arr
 start_insertionsorter = timer()
 def insertionSort(arr):
     for i in range(1, len(arr)):
@@ -70,6 +64,8 @@ end3 = timer()
 cas_insertionsort = end3 - start_insertionsorter
 
 
+
+arr_merge = arr
 start_mergesorter = timer()
 def mergeSort(arr):
     if len(arr) > 1:
@@ -104,6 +100,9 @@ if __name__ == '__main__':
     end4 = timer()
     cas_mergesorter = end4 - start_mergesorter
 
+
+
+arr_selection = arr
 start_selectionsort = timer()
 for i in range(len(arr)):
     min_idx = i
@@ -117,7 +116,7 @@ cas_selectionsorter = end5 - start_selectionsort
 
 
 
-print("Zoradené pole je: ", arr_bubble, "sek.")
+print("Zoradený array je: ", arr,)
 print("Rýchlosť quick sorteru je: ",cas_quicksorter, "sekund.")
 print("Rýchlosť insertion sorteru je: ",cas_insertionsort, "sekund.")
 print("Rýchlosť merge sorteru je: ",cas_mergesorter, "sekund.")
