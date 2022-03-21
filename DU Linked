@@ -1,0 +1,91 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.nextNode = None
+
+    def getValue(self):
+        return self.value
+
+    def setNextNode(self, node):
+        self.nextNode = node
+
+class LinkedList:
+    def __init__(self):
+        self.length = 0
+        self.headNode = None
+        self.tail = None
+
+    def addNode(self, value):
+        newNode = Node(value)
+        if (self.headNode == None):
+            self.headNode = newNode
+            return
+        else:
+            temp = self.headNode
+            while (temp.nextNode != None):
+                temp = temp.nextNode
+            temp.nextNode = newNode
+
+    def getValues(self):
+        temp = self.headNode
+        if (temp != None):
+            print("List obsahuje:", end=" ")
+            while (temp != None):
+                print(temp.value, end=" ")
+                temp = temp.nextNode
+            print()
+
+    def getHead(self):
+        return self.headNode
+
+    def getTail(self):
+        return self.tail
+
+    def removeValues(self, value):
+        if self.headNode is None:
+            return None
+        else:
+            don = self.headNode
+            prev = None
+            while don.value != value and don.nextNode is not None:
+                prev = don
+                don = don.nextNode
+            if don.value == value:
+                if don == self.headNode:
+                    if don.nextNode is None:
+                        self.headNode = None
+                    else:
+                        self.headNode = don.nextNode
+                else:
+                    if don.nextNode is None:
+                        prev.nextNode = None
+                    else:
+                        prev.nextNode = don.nextNode
+
+
+    def insert(self, value, position):
+        newNode = Node(value)
+        if (position < 1):
+            print("\nposition should be >= 1.")
+        elif (position == 1):
+            newNode.nextNode = self.headNode
+            self.headNode = newNode
+        else:
+            temp = self.headNode
+            for i in range(1, position - 1):
+                if (temp != None):
+                    temp = temp.nextNode
+            if (temp != None):
+                newNode.nextNode = temp.nextNode
+                temp.nextNode = newNode
+            else:
+                print("\nMinulý je prazdny.")
+list = LinkedList()
+list.addNode(8)
+list.addNode(7)
+list.addNode(6)
+list.addNode(5)
+list.addNode(0)
+list.insert(69, 5)
+list.removeValues(6)
+list.getValues()
